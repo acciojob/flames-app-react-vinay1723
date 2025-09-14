@@ -53,6 +53,8 @@ function App() {
         <div>
           <label htmlFor="name1"></label>
           <input
+            data-testid="input1"
+            name="name1"
             type="text"
             id="name1"
             placeholder="Enter first name"
@@ -63,6 +65,9 @@ function App() {
         <div>
           <label htmlFor="name2"></label>
           <input
+            data-
+            testid="input2"
+            name="name2"
             type="text"
             id="name2"
             placeholder="Enter second name"
@@ -70,10 +75,18 @@ function App() {
             onChange={(e) => setName2(e.target.value)}
           />
         </div>
-        <button type="submit">Calculate Relationship Future</button>
+        <button
+          name="calculate_relationship"
+          data-testid="calculate_relationship"
+          type="submit"
+        >
+          Calculate Relationship Future
+        </button>
       </form>
-      <button onClick={clearFields}>Clear</button>
-      {result && <h1>{result}</h1>}
+      <button name="clear" data-testid="clear" onClick={clearFields}>
+        Clear
+      </button>
+      {result && <h3 data-testid="answer">{result}</h3>}
     </div>
   );
 }
