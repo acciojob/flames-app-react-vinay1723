@@ -8,14 +8,14 @@ function App() {
 
   function CalculateRelationShip(e) {
     e.preventDefault();
-    console.log("hi");
+
     if (!name1 || !name2) {
-      setResult("Enter both valid names");
+      setResult("Please Enter valid input");
       return;
     }
 
-    const arr1 = name1.toLowerCase().split("");
-    const arr2 = name2.toLowerCase().split("");
+    const arr1 = name1.split(""); // case-sensitive
+    const arr2 = name2.split("");
 
     for (let i = 0; i < arr1.length; i++) {
       let index = arr2.indexOf(arr1[i]);
@@ -27,7 +27,7 @@ function App() {
 
     let count = arr1.join("").length + arr2.join("").length;
     let remainder = count % 6;
-    console.log(remainder);
+
     const flamesMap = {
       1: "Friends",
       2: "Love",
@@ -35,7 +35,6 @@ function App() {
       4: "Marriage",
       5: "Enemy",
       0: "Siblings",
-      "": "Please Enter valid input",
     };
 
     setResult(flamesMap[remainder]);
