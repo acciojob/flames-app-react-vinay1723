@@ -65,8 +65,7 @@ function App() {
         <div>
           <label htmlFor="name2"></label>
           <input
-            data-
-            testid="input2"
+            data-testid="input2"
             name="name2"
             type="text"
             id="name2"
@@ -86,7 +85,7 @@ function App() {
       <button name="clear" data-testid="clear" onClick={clearFields}>
         Clear
       </button>
-      {result && <h3 data-testid="answer">{result}</h3>}
+      {<h3 data-testid="answer">{result}</h3>}
     </div>
   );
 }
